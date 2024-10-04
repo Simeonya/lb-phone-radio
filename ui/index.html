@@ -141,12 +141,16 @@
           <div id="homepage">
             <div class="header">
               <div class="title">Radio</div>
-              <div class="subtitle">Join a Radio channel.</div>
+              <div class="subtitle">Join a radio channel.</div>
             </div>
             <div class="button-wrapper">
               <input id="radioNumber" type="text" style="text-align: center;" placeholder="Hier Frequenz eingeben!" />
               <button id="joinButton" class="button">
                 <ion-icon name="join-outline"></ion-icon>Join
+              </button>
+
+              <button id="quitButton" class="button">
+                <ion-icon name="join-outline"></ion-icon>Quit
               </button>
             </div>
           </div>
@@ -157,23 +161,32 @@
   <script src="dev.js"></script>
   <script>
     const joinButton = $('#joinButton');
+    const quitButton = $('#quitButton');
 
     joinButton.click(() => {
       let radioNumber = $('#radioNumber').val();
       if (radioNumber.length === 0 || radioNumber === '') {
         return sendNotification({
-          title: "Enter a valid radio number!"
+          title: "Please enter a radio number!"
         })
       }
 
-      fetchNui('joinRadio', {
+      fetchNui('joinradio', {
         channel: radioNumber
       });
 
       return sendNotification({
-        title: "You have joined the Radio channel!"
+        title: "You have joined the radio channel!"
       })
 
+    });
+
+    quitButton.click(() => {
+      fetchNui('quitradio', {});
+
+      return sendNotification({
+        title: "You have left the radio channel!"
+      })
     });
   </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

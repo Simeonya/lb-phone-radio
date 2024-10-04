@@ -8,7 +8,6 @@ version("1.0.0")
 
 client_scripts({
 	"@es_extended/imports.lua",
-	"config.lua",
 	"client.lua",
 })
 
