@@ -9,8 +9,8 @@ version("1.0.0")
 client_scripts({
 	"@es_extended/imports.lua",
 	"client.lua",
+	"config.lua"
 })
-
 files({
 	"ui/**/*",
 })
