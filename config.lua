@@ -1,9 +1,9 @@
 Config({
 	-- The name of the app
-	name = "Funk",
+	name = "Radio",
 
 	-- The description of the app
-	description = "Eine simple Funk-App",
+	description = "A simple radio app",
 
 	-- The developer of the app
 	developer = "Simeonya",
